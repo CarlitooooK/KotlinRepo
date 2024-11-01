@@ -45,17 +45,19 @@ fun imprimir(saludo:String){
         print(i)
         Thread.sleep(100)
     }
+    println(" ")
 }
 
 fun main(){
     var azar:Int
     var puntaje = 0
     var resultado:Int
-    val saludo = "Quieres jugar un juego..? (y/n)"
+    val saludo = "Piedra, Papel o Tijeras con KOTLIN!"
+    imprimir(saludo)
+    var opcion:String
     val despedida = "Gracias por Jugar"
     do {
-        imprimir(saludo)
-        val opcion = readln()
+
         println("Elige, Piedra, Papel o Tijeras")
         val juego = readln()
         azar = Random.nextInt(1,4)
@@ -70,7 +72,8 @@ fun main(){
 
             }
             println("Puntaje: $puntaje")
-
+        println("Jugar de nuevo? (y/n)")
+        opcion = readln()
     }while (opcion == "y")
     imprimir(despedida)
 }
