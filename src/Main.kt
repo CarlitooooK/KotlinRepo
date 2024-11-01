@@ -50,7 +50,8 @@ fun imprimir(saludo:String){
 
 fun main(){
     var azar:Int
-    var puntaje = 0
+    var puntajeUsuario=0
+    var puntajeMaquina=0
     var resultado:Int
     val saludo = "Piedra, Papel o Tijeras con KOTLIN!"
     imprimir(saludo)
@@ -63,17 +64,28 @@ fun main(){
         azar = Random.nextInt(1,4)
         resultado=turnoMaquina(juego,azar)
         when(resultado){
-            0-> println("Empate")
+            0->{
+                println("Empate!")
+                println("Ninguno suma puntos!")
+            }
             1-> {
                 println("Ganaste")
-                puntaje += 1
+                println("Sumas un Punto!")
+                puntajeUsuario += 1
             }
-            2->println("Perdiste")
+            2->{
+                println("Perdiste")
+                println("Genial punto para mi!")
+                puntajeMaquina += 1
+            }
 
             }
-            println("Puntaje: $puntaje")
         println("Jugar de nuevo? (y/n)")
         opcion = readln()
     }while (opcion == "y")
+    println("........Puntaje General........")
+    println("Tu puntaje: $puntajeUsuario")
+    println("Puntaje de la Maquina: $puntajeMaquina")
+    println("...............................")
     imprimir(despedida)
 }
