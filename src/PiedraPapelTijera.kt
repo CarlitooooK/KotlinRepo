@@ -77,7 +77,7 @@ fun main(){
                 println("Perdiste")
                 println("Genial punto para mi!")
                 puntajeMaquina += 1
-            }
+            }   
 
             }
         println("Jugar de nuevo? (y/n)")
